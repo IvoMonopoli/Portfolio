@@ -1,0 +1,9 @@
+.navbar .nav-link {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+.navbar .nav-link:hover {
+  color: white;
+  text-decoration: none; /* Por si deseas un subrayado */
+  transform: scale(1.2); /* Incrementa el tamaño un poco */
+  transition: 0.5s ease;
+}

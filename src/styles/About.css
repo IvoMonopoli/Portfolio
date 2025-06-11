@@ -1,0 +1,78 @@
+.about-section {
+    background-color: #1d1d1d; /* Color de fondo, por ejemplo */
+    color: #fff;
+    margin-top: -10%;
+
+  }
+.about-section .row{
+      gap: 20px; /* espacio de 20px entre elementos */
+}
+  .about-card {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+  
+  .about-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .about-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  .icon-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Para ajustar el párrafo dentro de cada tarjeta */
+  .about-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+
+
+
+  /* -----------------------------------------------------
+   Media Query para pantallas muy grandes (max-width: 1800px)
+----------------------------------------------------- */
+  @media (min-width: 1800px){
+  .about-section{
+    margin-top: -20%;
+  }
+  }
+
+  /* -----------------------------------------------------
+   Media Query para tablets (max-width: 992px)
+----------------------------------------------------- */
+  @media (min-width: 767.98px) and (max-width: 1024px){
+      .about-section{
+    margin-top: -50%;
+  }
+
+  }
+
+  
+
+  /* -----------------------------------------------------
+   Media Query para dispositivos móviles (max-width: 768px)
+----------------------------------------------------- */
+@media (max-width: 767.98px){
+  .about-section{
+    margin-top: 50px;
+  }
+  .about-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin: 0px 0px;
+  }
+}

@@ -1,0 +1,22 @@
+body {
+    /* Degradado animado que cambia de posición */
+    background: var(--gradient-bg);;
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+  

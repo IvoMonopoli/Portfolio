@@ -1,0 +1,295 @@
+/* Reset básico para eliminar márgenes y paddings por defecto */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--gradient-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+:root {
+  /* Gradiente de gris: de un gris oscuro (#2c2c2c) a un gris claro (#d3d3d3) */
+  --gradient-bg: linear-gradient(to bottom, #2c2c2c, #d3d3d3);
+}
+
+/* Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap');
+
+
+
+/* Botón personalizado: fondo negro y borde blanco */
+.btn-custom {
+  display: inline-block;
+  padding: 3px 40px; /* Más ancho y con menor altura */
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  background-color: #2c3231; /* Fondo negro en el botón */
+  text-decoration: none;
+  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Efecto hover para el botón */
+.btn-custom:hover {
+  transform: scale(1.1);
+}
+
+.icono {
+  color: #2c3231 !important;
+}
+.icono:hover {
+  transform: scale(1.2);
+}
+
+/* Estilos para la parte de la presentación */
+.intro {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Neuton', serif;
+  margin-bottom: -0.3rem;
+  color: #2c3231;
+}
+
+.name {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-bottom: -0.3rem;
+}
+
+.profession {
+  font-size: 2rem;
+  font-family: 'Neuton', serif;
+  margin: 0;
+  color: #2c3231;
+}
+
+.descripcion {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* La sección principal se posiciona relativamente */
+.home-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  margin-bottom: -50px;
+}
+
+/* Contenedor que envuelve la imagen y la posiciona */
+.hero-image-wrapper {
+  position: absolute;
+  top: -4%;
+  left: 0%;              /* Más a la izquierda */
+  transform: translateX(0);
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+}
+
+/* La imagen de la tarjeta */
+.hero-image {
+  max-width: 500px;  /* Ajustá según el tamaño deseado */
+  width: 100%;
+  animation: slideDown 1s ease-out forwards;
+}
+
+/* Animación para la imagen */
+@keyframes slideDown {
+  0% {
+    transform: translate(0, -100%) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Espacio para el contenido */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  padding-top: 100px;
+}
+/* Asegurarnos que .home-section tenga posición relativa para ubicar la marquee */
+.home-section {
+  position: relative;
+}
+
+/* La marquee vertical en la esquina superior derecha */
+.tech-marquee-vertical {
+  position: absolute;
+  top: -9%;
+  right: 4%;
+  width: 15%;        /* ajustá según el tamaño que necesites */
+  height: 50%;      /* altura visible del contenedor */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Opcional: para ver el contenedor, podes usar background-color temporalmente */
+  /* background-color: rgba(255,255,255,0.1); */
+}
+
+/* Coloca los iconos en vertical y los anima hacia arriba */
+.tech-icons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  fill: #ffffff !important;
+  /* Se mueve de 0 a -50%: si duplicaste el contenido, la segunda mitad es idéntica */
+  animation: marquee-vertical 10s linear infinite;
+}
+.tech-icons-vertical svg {
+  opacity: 0.6; /* Ajustá el valor (0 a 1) según la transparencia que quieras */
+}
+/* Animación vertical que mueve los iconos de abajo hacia arriba */
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30%);
+  }
+}
+
+/* Deshabilitar el marquee vertical en tablets y móviles */
+@media (max-width: 1024px) {
+  .tech-marquee-vertical {
+    display: none;
+  }
+}
+
+@media (min-width: 1800px) {
+  /* Limitar el ancho del contenedor principal para que no se estire tanto */
+  .home-section,
+  .container {  /* Si usás el container de Bootstrap */
+    max-width: 1524px;  /* O el valor que se adecúe a tus contenidos */
+    margin: 0 auto;
+    padding: 0 20px;    /* Un poco de espacio lateral */
+  }
+  
+  /* Si tu layout utiliza .home-section como contenedor de la parte principal, asegurate de aplicar además a sus hijos */
+  .hero-image-wrapper {
+    /* Mantener los mismos ajustes de ancho para que la imagen se vea consistente */
+    top: -100px;
+    width: 40%;
+    text-align: left;
+  }
+  
+  .content-wrapper {
+    top:50px;
+    width: 100%;
+    padding-left: 20px;
+    text-align: left;
+  }
+  .descripcion{
+    font-size: 20px;
+  }
+  /* Aumentar el tamaño del navbar en pantallas grandes */
+  .navbar {
+    padding-top: 20px;    /* Más alto */
+    padding-bottom: 20px; /* Más alto */
+    font-size: 1.2rem;    /* Se puede incrementar el tamaño de letra para mayor legibilidad */
+  }
+}
+
+/* -----------------------------------------------------
+   Media Query para tablets (max-width: 992px)
+----------------------------------------------------- */
+@media (min-width: 767.98px) and (max-width: 1024px) {
+  /* Forzamos que la sección tenga un layout en fila */
+  .home-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* La imagen ocupa solo una parte del ancho y se mueve 
+     ligeramente hacia la izquierda */
+  .hero-image-wrapper {
+    position: relative;
+    top: -290px;       /* Sube la imagen ligeramente */
+    left: 0px;      /* La desplaza hacia la izquierda */
+    transform: none;
+    width: 60%;       /* La imagen ocupará el 40% del ancho */
+    text-align: left;
+    margin-bottom: 0;
+    flex-shrink: 0;   /* Evita que se reduzca el ancho */
+  }
+  
+  /* El contenido (texto, botones, etc.) ocupa el resto del espacio */
+  .content-wrapper {
+    margin-top: -570px;
+    margin-left: -30%;
+    width: 60%;       /* Ocupa el 60% del espacio */
+    padding-top: 0px;   /* Elimina el padding superior para que se acerque a la imagen */
+    text-align: left;
+    padding-left: 0px; /* Espacio entre la imagen y el contenido */
+  }
+  
+  /* En caso de tener botones o íconos en un contenedor flex,
+     se fuerza a centrar su contenido */
+  .d-flex.align-items-center.my-3 {
+    justify-content: center;
+  }
+      .navbar-collapse {
+    position: absolute;
+    top: 60px; /* Ajustá este valor al alto de tu navbar */
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* Asegúrate de que esté sobre el contenido */
+    padding: 20px 0; /* Opcional: espacio interno en el menú */
+  }
+  
+  
+}
+
+/* -----------------------------------------------------
+   Media Query para dispositivos móviles (max-width: 768px)
+----------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .hero-image-wrapper {
+    position: relative;
+    top: -70px;      /* Más negativo para subir aún más la imagen */
+    left: 0;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    width: auto;
+    animation: none;  /* Se quita la animación para evitar saltos */
+  }
+  
+  .content-wrapper {
+    padding-top: 0px; /* Se elimina el espacio para que el texto quede pegado a la imagen */
+    text-align: center;
+    margin-top: -150px;
+  }
+  
+  .d-flex.align-items-center.my-3 {
+    justify-content: center;
+  }
+    .navbar-collapse {
+    position: absolute;
+    top: 60px; /* Ajustá este valor al alto de tu navbar */
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* Asegúrate de que esté sobre el contenido */
+    padding: 20px 0; /* Opcional: espacio interno en el menú */
+  }
+    .tech-marquee-vertical {
+    display: none;
+  }
+}
+

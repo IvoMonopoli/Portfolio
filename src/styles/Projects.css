@@ -1,0 +1,127 @@
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+.projects-section {
+  padding: 50px 0px;
+  background-color: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1d1d1d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.btn {
+  padding: 8px 17%;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+}
+.btn-primary:hover {
+  animation: glowing 1s infinite alternate;
+  transform: scale(1.05);
+}
+.btn-secondary:hover {
+  animation: glowing 1s infinite alternate;
+  transform: scale(1.05);
+}
+.btn-primary {
+  background-color: #d3d3d3;
+  color: #1d1d1d;;
+  border-color: #1d1d1d;
+}
+.btn-primary:hover{
+    background-color: #d3d3d3;
+  color: #1d1d1d;;
+  border-color: #1d1d1d;
+  transform: scale(1.1);
+}
+.btn-secondary {
+  background-color: #1d1d1d;
+  color: #d3d3d3;
+  
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+  background-color: #1d1d1d;
+  transform: scale(1.1);
+}
+h3{
+  color: gainsboro;
+}
+p{
+  color: gainsboro;
+}
+h1{
+  color: gainsboro;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1024.1px) {
+  /* Limitar el ancho del contenedor principal para que no se estire tanto */
+
+  .projects-section {
+  padding: 50px 150px;
+  background-color: transparent;
+}
+}
+
+/* -----------------------------------------------------
+   Media Query para tablets (max-width: 992px)
+----------------------------------------------------- */
+@media (min-width: 767.98px) and (max-width: 1024px) {
+.btn {
+  padding: 8px 8%;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 20px;
+}
+}
+
+/* -----------------------------------------------------
+   Media Query para dispositivos móviles (max-width: 768px)
+----------------------------------------------------- */
+@media (max-width: 767.98px) {
+.btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 20px;
+}
+}
