@@ -3,7 +3,6 @@ import '../styles/NavigationBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-
 function NavigationBar({ sections }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -82,6 +81,8 @@ function NavigationBar({ sections }) {
               ))}
             </ul>
           </div>
+
+    
         </div>
       </nav>
       

@@ -35,6 +35,7 @@ html, body {
 /* Efecto hover para el botón */
 .btn-custom:hover {
   transform: scale(1.1);
+  animation: glowing 1s infinite alternate;
 }
 
 .icono {

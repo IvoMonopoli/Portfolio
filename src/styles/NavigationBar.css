@@ -7,3 +7,21 @@
   transform: scale(1.2); /* Incrementa el tamaño un poco */
   transition: 0.5s ease;
 }
+.logo-container {
+  /* La clase ms-auto de Bootstrap ya empuja el logo a la derecha.
+     Puedes agregar reglas adicionales si necesitas ajustar el tamaño o el margen. */
+  margin-left: auto;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  /* La clase ms-auto de Bootstrap ya empuja el logo a la derecha */
+}
+
+.logo-image {
+  width: 50px;           /* Ajusta este valor según el tamaño deseado */
+  height: auto;
+  border-radius: 50%;    /* Esto hará que la imagen tenga forma circular */
+  background-color: #1d1d1d; /* Fondo oscuro para simular el redondel */
+  padding: 5px;          /* Opcional: espacio interno para separar la imagen de los bordes */
+}

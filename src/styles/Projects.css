@@ -3,6 +3,7 @@
   50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
   100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 }
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap');
 
 .projects-section {
   padding: 50px 0px;
@@ -15,113 +16,172 @@
   gap: 20px;
 }
 
+/* Modificación en project-card para usar Flexbox y establecer una altura mínima */
 .project-card {
   background: #1d1d1d;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;  /* Puedes ajustar este valor según el contenido deseado */
 }
-
-
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
+/* Convertimos project-content en un contenedor flex para empujar el bloque de botones */
 .project-content {
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
+/* Con margin-top: auto los botones se empujan al fondo de project-content */
 .project-buttons {
   display: flex;
   justify-content: center;
-  margin: 0px;
+  margin-top: auto;
 }
 
 .btn {
-  padding: 8px 17%;
+  padding: 4px 8%;
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
-  margin: 10px;
+  margin: 0px 3px;
+  
 }
-.btn-primary:hover {
-  animation: glowing 1s infinite alternate;
-  transform: scale(1.05);
-}
-.btn-secondary:hover {
-  animation: glowing 1s infinite alternate;
-  transform: scale(1.05);
-}
+
 .btn-primary {
   background-color: #d3d3d3;
-  color: #1d1d1d;;
-  border-color: #1d1d1d;
+  color: #1d1d1d;
+  border: none;
+  
+    --bs-btn-color:var(--bs-btn-active-bg) #fff;
+    --bs-btn-bg: black ; 
+    --bs-btn-border-color: black; 
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: black; 
+    --bs-btn-hover-border-color: black; 
+    --bs-btn-focus-shadow-rgb: 49, 132, 253; 
+    --bs-btn-active-color: black;
+     --bs-btn-active-bg: white; 
+     --bs-btn-active-border-color: #0a53be; 
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+     --bs-btn-disabled-color: #fff; 
+    --bs-btn-disabled-bg: #0d6efd; 
+     --bs-btn-disabled-border-color: white;
+    
+
 }
-.btn-primary:hover{
-    background-color: #d3d3d3;
-  color: #1d1d1d;;
+
+.btn-primary:hover {
+  background-color: #d3d3d3;
+  color: #1d1d1d;
   border-color: #1d1d1d;
   transform: scale(1.1);
+  animation: glowing 1s infinite alternate;
+  
 }
+
 .btn-secondary {
   background-color: #1d1d1d;
   color: #d3d3d3;
-  
 }
 
 .btn-secondary:hover {
   opacity: 0.8;
   background-color: #1d1d1d;
   transform: scale(1.1);
+  animation: glowing 1s infinite alternate;
 }
-h3{
+
+h3 {
+  color: gainsboro;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 10px 0px;
+
+}
+
+p {
   color: gainsboro;
 }
-p{
-  color: gainsboro;
-}
-h1{
-  color: gainsboro;
+
+.projects-section h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Montserrat';
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 54px;
 }
+/* Quitar outline y cualquier efecto en focus, active y focus-visible */
+/* Quitar outline y box-shadow para muchos estados */
+a:focus,
+a:active,
+a:focus-visible,
+button:focus,
+button:active,
+button:focus-visible,
+.btn:focus,
+.btn:active,
+.btn:focus-visible,
+a::-moz-focus-inner,
+button::-moz-focus-inner,
+.btn::-moz-focus-inner {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+
 
 @media (min-width: 1024.1px) {
   /* Limitar el ancho del contenedor principal para que no se estire tanto */
-
   .projects-section {
-  padding: 50px 150px;
-  background-color: transparent;
-}
+    padding: 50px 150px;
+    background-color: transparent;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* -----------------------------------------------------
    Media Query para tablets (max-width: 992px)
 ----------------------------------------------------- */
 @media (min-width: 767.98px) and (max-width: 1024px) {
-.btn {
-  padding: 8px 8%;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 20px;
-}
+  .btn {
+    padding: 8px 8%;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+  }
 }
 
 /* -----------------------------------------------------
    Media Query para dispositivos móviles (max-width: 768px)
 ----------------------------------------------------- */
 @media (max-width: 767.98px) {
-.btn {
-  padding: 8px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 20px;
+  .btn {
+    padding: 5px 14%;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+  }
+  .project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 }

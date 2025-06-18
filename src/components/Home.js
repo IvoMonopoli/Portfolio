@@ -1,8 +1,8 @@
 import React from 'react';
 import IvoTarjeta from '../assets/ivo.png'; // Asegurate de haber eliminado el fondo y guardado en PNG
-import '../styles/Home.css';
 import cv from '../assets/IvoMonopoliCV.pdf';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../styles/Home.css';
 import { 
   FaLinkedin, 
   FaInstagram, 

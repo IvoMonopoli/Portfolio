@@ -1,0 +1,183 @@
+/* Importar la fuente remota */
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap');
+
+/* -------------------------- */
+/* Animaciones                */
+/* -------------------------- */
+
+/* Animación de pulso (para iconos) */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Animación de glowing (usada en botones) */
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px rgba(255,255,255,0.5); }
+  50% { box-shadow: 0 0 15px rgba(255,255,255,0.9); }
+  100% { box-shadow: 0 0 5px rgba(255,255,255,0.5); }
+}
+
+/* -------------------------- */
+/* Estilos generales          */
+/* -------------------------- */
+
+/* Sección de detalle del proyecto */
+.project-detail-section {
+  padding: 20px;
+}
+
+/* Contenedor exclusivo para ProjectDetail */
+.project-detail-wrapper {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+/* Layout en escritorio: contenedor en fila */
+.project-detail-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+/* Carrusel: lado izquierdo */
+.project-carousel {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.project-carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Descripción: lado derecho */
+.project-description {
+  flex: 1 1 300px;
+  max-width: 400px;
+  color: gainsboro;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tecnologías: iconos animados */
+.project-technologies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.tech-icon-container {
+  text-align: center;
+  cursor: default;
+  animation: pulse 2s infinite;
+  margin: 0 15px;
+  color: #2c3231;
+  opacity: 0.9;
+}
+
+.tech-icon-container span {
+  font-size: 15px;
+  margin-top: 5px;
+  display: block;
+  opacity: 0.9;
+}
+
+/* Botón "Volver atrás" */
+.back-button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #d3d3d3;
+  color: #1d1d1d;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #d3d3d3;
+  color: #1d1d1d;
+  border-color: #1d1d1d;
+  transform: scale(1.1);
+  animation: glowing 1s infinite alternate;
+}
+
+.btn-secondary {
+  background-color: #1d1d1d;
+  color: #d3d3d3;
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+  background-color: #1d1d1d;
+  transform: scale(1.1);
+  animation: glowing 1s infinite alternate;
+}
+
+/* -------------------------- */
+/* Responsive: Tablets/Móviles */
+/* -------------------------- */
+
+@media (max-width: 1024px) {
+  .project-detail-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .project-carousel,
+  .project-description {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  /* Forzar una altura fija al carrusel */
+  .project-carousel {
+    height: 300px;
+    position: relative;
+  }
+  
+  /* Asegurar que cada slide se centre y ocupe el contenedor */
+  .project-carousel .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ajustar la imagen: fijamos la altura en lugar de max-height */
+  .project-carousel img {
+    width: 100%;
+    height: 300px;  /* Fijamos la altura para que las imágenes siempre tengan ese tamaño */
+    object-fit: cover;
+  }
+}
+
+
+
+/* Opcional: ajustes extras para móviles (hasta 767px) */
+@media (max-width: 767px) {
+  .project-carousel img {
+    height: 200px;
+  }
+}
