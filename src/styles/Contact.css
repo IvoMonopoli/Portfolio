@@ -234,12 +234,22 @@
     pointer-events: none;
   }
   .socials{
-  margin-right: 35px;
   margin-top: 50px;
+  align-items: center;
+  align-content: center;
+  
+
 }
 .location-marker{
   margin-top: 42%;
   margin-right: 100px;
   width: 200px;
+}
+}
+@media (max-width: 767.9px){
+.socials{
+  align-items: center;
+  align-content: center;
+  margin-left: 10px;
 }
 }

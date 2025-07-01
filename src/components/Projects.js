@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Projects.css';
-import proyecto1Img from '../assets/proyecto1.jpg'
+import proyecto1Img from '../assets/projects/proyecto1.jpg'
+import proyecto2Img from '../assets/projects/casamonopoli1.png'
+
 
 // Lista de proyectos con información básica
 const projectList = [
@@ -10,30 +12,15 @@ const projectList = [
     title: 'Base de datos para clientes',
     description: 'Realizada en electron con su base de datos en RDS.',
     image: proyecto1Img, // Reemplaza con la URL de tu imagen
-    github: 'https://github.com/usuario/proyecto1' // Reemplaza con tu enlace real
+    github: 'https://github.com/IvoMonopoli' // Reemplaza con tu enlace real
   },
   {
     id: 'proyecto2',
-    title: 'Proyecto 2',
-    description: 'Una descripción corta de otro proyecto.',
-    image: proyecto1Img, // Reemplaza con la URL de tu imagen
+    title: 'Casa Monopoli',
+    description: 'Realizada con React , web diseñada para una pyme encargada de venta y alquiler de insumos medicos',
+    image: proyecto2Img, // Reemplaza con la URL de tu imagen
     github: 'https://github.com/usuario/proyecto2'
   },
-    {
-    id: 'proyecto2',
-    title: 'Proyecto 2',
-    description: 'Una descripción corta de otro proyecto.',
-    image: proyecto1Img, // Reemplaza con la URL de tu imagen
-    github: 'https://github.com/usuario/proyecto2'
-  }, 
-  {
-    id: 'proyecto2',
-    title: 'Proyecto 2',
-    description: 'Una descripción corta de otro proyecto.',
-    image: proyecto1Img, // Reemplaza con la URL de tu imagen
-    github: 'https://github.com/usuario/proyecto2'
-  },
-  
   // Agrega más proyectos aquí...
 ];
 

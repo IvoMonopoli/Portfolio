@@ -50,6 +50,7 @@
 .project-carousel {
   flex: 1 1 400px;
   max-width: 600px;
+  margin-right: 20px;
 }
 
 .project-carousel img {
@@ -60,14 +61,15 @@
 
 /* Descripción: lado derecho */
 .project-description {
-  flex: 1 1 300px;
-  max-width: 400px;
+  flex: 1 1 400px;      /* más generoso con el mínimo sugerido */
+  max-width: 600px;     /* aumentamos el límite derecho */
   color: gainsboro;
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 /* Tecnologías: iconos animados */
 .project-technologies {
